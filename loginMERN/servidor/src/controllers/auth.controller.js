@@ -56,6 +56,13 @@ export const logout = (req, res) => {
 
 }
 
-export const profile = async (req, res) => {
-    res.send('profile');
+export const profile = async (req,res)=>{
+    const userFound= User.findById(req.user.id)
+    if (!userFound) return res.status(404).json({message:'User not found'})
+
+    res.send({
+        _id:userFound._id,
+        username:userFound.username,
+        email:userFound.email
+    })
 }
