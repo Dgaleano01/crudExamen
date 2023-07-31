@@ -1,0 +1,46 @@
+<h1>INGRESAR PRODUCTOS DE MERCADO</h1>
+<h1>Data [(Binding)]</h1>
+<p>NOMBRE: {{ person.name }}</p>
+<input type="text" required #nameInput="ngModel"[(ngModel)]="person.name"/>
+<p>VALID: {{nameInput.valid}}</p>
+<p>EDAD: {{ person.age }}</p>
+<input type="number" max="18" min="10" #nameAge="ngModel"[(ngModel)]="person.age"/>
+<p>VALID: {{nameAge.valid}}</p>
+
+<hr/>
+<h1>Data [(Binding)]</h1>
+<p>NOMBRE: {{ person.name }}</p>
+<input type="text" required #nameInput="ngModel"[(ngModel)]="person.name"/>
+<p>VALID: {{nameInput.valid}}</p>
+<p>EDAD: {{ person.age }}</p>
+<input type="number" max="18" min="10" #nameAge="ngModel"[(ngModel)]="person.age"/>
+<p>VALID: {{nameAge.valid}}</p>
+
+<hr/>
+<h1>Even Binding #2</h1>
+<div class="box" (scroll)="onScroll($event)">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim rem magni, commodi doloribus officia earum consectetur assumenda recusandae, incidunt amet esse a quod et maiores. Cumque quisquam esse corrupti debitis.</p>
+</div>
+
+<hr>
+<h1>Even Binding</h1>
+<button [disabled]="btnDisabe">Enviar</button>
+<button (click)="toggleButton()">Activar</button>
+
+<h2>Mi edad es {{ age }}</h2>
+<button (click)="increaseAge()">Cumplir años</button>
+
+<hr>
+<h1>Propierty binding</h1>
+<button [disabled]="btnDisabe">Enviar</button>
+<input type="text" [placeholder]="name">
+<progress max="100" [value]="age"></progress>
+<img width="100" [src]="imagen" alt="">
+
+<hr>
+<h1>String interpolation</h1>
+<h2>hola soy {{ name }}</h2>
+<p>una sumita tapida 5 + 3 = {{ 5 + 3 }}</p>
+<h2>Mi edad es {{ age }}</h2>
+<h2>Me encantan los Capibaras</h2>
+<img src="{{ imagen }}" alt="">
