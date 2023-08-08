@@ -1,0 +1,37 @@
+        <app-navbar></app-navbar>
+        <div class="flex justify-center mt-5">
+        <div class="bg-white rounded-xl p-2 shadow-md w-9/12">
+        <div class="relative overflow-x-auto  sm:rounded-lg">
+            <h1 class="text-3xl text-center font-medium mb-5">Usuarios registrados</h1>
+          <table class="w-full text-sm text-left text-gray-500">
+            <thead class="bg-orange-950">
+              <tr class="">
+                <th  class="px-6 py-3 text-left text-white text-xs font-medium text-gray-500 uppercase">Nombre</th>
+                <th  class="px-6 py-3 text-left text-white text-xs font-medium text-gray-500 uppercase">Email</th>
+                <th  class="px-6 py-3 text-left text-white text-xs font-medium text-gray-500 uppercase">Contraseña</th>
+                <th class=" py-3 text-right text-white text-xs font-medium text-gray-500 uppercase">Acciones</th>
+                <th></th>
+              </tr>
+            </thead>
+            <p *ngIf="listaUsuarios.length == 0"  class="text-xl  mt-10">No hay usuarios</p>
+            <tbody>
+
+              <tr  *ngFor="let usuario of listaUsuarios" class="odd:bg-orange-100 even:bg-orange-200 ">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 ">{{ usuario.name }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 ">{{ usuario.email }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 ">{{ usuario.password }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+                  <a [routerLink]="'/auth/'+usuario._id" class="text-amber-500 hover:text-amber-600">Editar</a>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+                    <a (click)="borrarUsuario(usuario._id || '')" class="text-red-500 hover:text-red-700" >Delete</a>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          <article class="mt-5 flex items-center">
+            <button [routerLink]="''"  class="mx-2 px-5 bg-orange-400 p-2 rounded-2xl my-5">Añadir</button>
+        </article>
+        </div>
+    </div>
+</div>

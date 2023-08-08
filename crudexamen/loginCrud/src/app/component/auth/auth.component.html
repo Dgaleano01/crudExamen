@@ -1,0 +1,30 @@
+ <app-navbar></app-navbar>
+<main class="flex p-14 justify-center ">
+
+    <section class="flex justify-center items-center flex-col sm:flex-row sm:w-10/12 md:w-full">
+
+        <article class="bg-orange-100 box-border p-5 sm:w-96 md:w-3/5 lg:w-2/5 xl:w-4/12 2xl:w-3/12 rounded-2xl">
+
+        <h2  class="text-center text-2xl mb-8 font-bold">{{ tituloFormulario }}</h2>
+
+        <form (submit)="onRegister()" [formGroup]="formulario" class="flex flex-col items-center h-full">
+
+            <input  formControlName="name" type="text" name="name" placeholder="  Nombre" class="w-4/5 my-2 p-2 rounded-3xl">
+
+
+            <input formControlName="email" type="email"  name="email" placeholder="  Email" class="w-4/5 my-2 p-2 rounded-3xl">
+
+
+            <input formControlName="password" type="password" name="password" placeholder="  ••••••" class="w-4/5 my-2 p-2 rounded-3xl">
+
+
+            <div class="flex">
+                <button   type="submit" class="rounded-3xl m-2 bg-orange-400 p-2 px-5">{{botonGuardar}}</button>
+                <button *ngIf="!botonOculto"  [routerLink]="'/list'" class="rounded-3xl m-2 bg-red-400 p-2 px-5">Cancelar</button>
+            </div>
+        </form>
+
+    </article>
+
+</section>
+</main>
